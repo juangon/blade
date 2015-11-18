@@ -15,6 +15,7 @@
  */
 package blade.portlet;
 
+import org.osgi.framework.BundleContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 
@@ -35,7 +36,7 @@ import javax.portlet.faces.GenericFacesPortlet;
 public class JSFPortletDS extends GenericFacesPortlet {
 
 	@Activate
-	public void activate() {
+	public void activate(BundleContext bundleContext) {
 		System.err.println("!@#$ activated " + this);
 	}
 }
