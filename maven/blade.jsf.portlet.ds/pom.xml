@@ -26,6 +26,16 @@
 			<artifactId>jsf-impl</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.liferay.portal</groupId>
+			<artifactId>util-bridges</artifactId>
+			<version>7.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.liferay.portal</groupId>
+			<artifactId>util-java</artifactId>
+			<version>7.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>javax.portlet</groupId>
 			<artifactId>portlet-api</artifactId>
 			<scope>provided</scope>
@@ -39,6 +49,11 @@
 			<groupId>org.osgi</groupId>
 			<artifactId>org.osgi.compendium</artifactId>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>6.0.0</version>
 		</dependency>
 	</dependencies>
 
@@ -54,7 +69,34 @@
 						<Embed-Transitive>true</Embed-Transitive>
 						<Include-Resource>{maven-resources}</Include-Resource>
 						<Private-Package>blade.portlet</Private-Package>
-						<Import-Package>javax.portlet;version="[2.0,3)",javax.servlet;version="[2.5,4)"</Import-Package>
+						<Import-Package>
+							javax.naming,
+							javax.portlet;version="[2.0,3)",
+							javax.portlet.filter;version="[2.0,3)",
+							javax.servlet;version="[2.5,4)",
+							javax.servlet.http;version="[2.5,4)",
+							javax.servlet.jsp,
+							javax.el,
+							javax.el.*,
+							javax.management,
+							javax.management.*,
+							javax.xml,
+							javax.xml.*,
+							com.liferay.portal.model,
+							com.liferay.staging.portlet.data.handler,
+							com.liferay.portlet.exportimport.lar,
+							com.liferay.portal.kernel.log,
+							com.liferay.portal.kernel.servlet.filters.invoker,
+							com.liferay.portal.kernel.servlet,
+							com.liferay.portal.kernel.portlet,
+							com.sun.el,
+							org.w3c.dom,
+							org.w3c.dom.*,
+							org.xml.sax,
+							org.xml.sax.*,
+							org.osgi.*
+						</Import-Package>
+						<Web-ContextPath>/blade-portlet</Web-ContextPath>
 						<_dsannotations>*</_dsannotations>
 					</instructions>
 				</configuration>
