@@ -15,6 +15,7 @@
  */
 package blade.portlet;
 
+import com.liferay.portal.jsf.portlet.tracker.JSFPortlet;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -31,9 +32,9 @@ import javax.portlet.faces.GenericFacesPortlet;
 		"javax.portlet.init-param.view-template=",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
-	service = Portlet.class
+	service = JSFPortlet.class
 )
-public class JSFPortletDS extends GenericFacesPortlet {
+public class JSFPortletDS extends GenericFacesPortlet implements JSFPortlet {
 
 	@Activate
 	public void activate(BundleContext bundleContext) {

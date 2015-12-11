@@ -52,7 +52,7 @@
 			<dependency>
 				<groupId>com.liferay.faces</groupId>
 				<artifactId>liferay-faces-bridge-impl</artifactId>
-				<version>4.2.6-ga7-SNAPSHOT</version>
+				<version>4.2.5-ga6</version>
 			</dependency>
 			<dependency>
 				<groupId>com.liferay.portal</groupId>
