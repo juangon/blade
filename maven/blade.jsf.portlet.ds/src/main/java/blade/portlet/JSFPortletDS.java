@@ -15,13 +15,14 @@
  */
 package blade.portlet;
 
-import com.liferay.portal.jsf.portlet.tracker.JSFPortlet;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
 import javax.portlet.Portlet;
 import javax.portlet.faces.GenericFacesPortlet;
+import javax.servlet.ServletContext;
 
 @Component(
 	immediate = true,
@@ -32,12 +33,18 @@ import javax.portlet.faces.GenericFacesPortlet;
 		"javax.portlet.init-param.view-template=",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
-	service = JSFPortlet.class
+	service = Portlet.class
 )
-public class JSFPortletDS extends GenericFacesPortlet implements JSFPortlet {
+public class JSFPortletDS extends GenericFacesPortlet {
 
 	@Activate
 	public void activate(BundleContext bundleContext) {
 		System.err.println("!@#$ activated " + this);
 	}
+
+	@Reference(target="(osgi.web.symbolicname=blade.jsf.portlet.ds)")
+	protected void setServletContext(ServletContext servletContext) {
+		//wait for the servlet context
+	}
+
 }
