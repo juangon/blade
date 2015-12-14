@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>blade.jsf.portlet.ds</artifactId>
-	<name>JSF Portlet DS</name>
+	<artifactId>blade.listener.servlet.portlet.ds</artifactId>
+	<name>Listener Servlet DS</name>
 	<packaging>bundle</packaging>
 
 	<parent>
@@ -12,29 +12,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.liferay.faces</groupId>
-			<artifactId>liferay-faces-bridge-impl</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.faces</groupId>
-			<artifactId>jsf-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.faces</groupId>
-			<artifactId>jsf-impl</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.liferay.portal</groupId>
-			<artifactId>util-bridges</artifactId>
-			<version>7.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.liferay.portal</groupId>
-			<artifactId>util-java</artifactId>
-			<version>7.0.0-SNAPSHOT</version>
-		</dependency>
+	<dependencies>		
 		<dependency>
 			<groupId>javax.portlet</groupId>
 			<artifactId>portlet-api</artifactId>
@@ -76,8 +54,6 @@
 						<Include-Resource>{maven-resources}</Include-Resource>
 						<Private-Package>blade.portlet</Private-Package>
 						<Import-Package>
-							javax.faces.*
-							javax.naming,
 							javax.portlet;version="[2.0,3)",
 							javax.portlet.filter;version="[2.0,3)",
 							javax.servlet;version="[2.5,4)",
@@ -90,6 +66,7 @@
 							javax.management.*,
 							javax.xml,
 							javax.xml.*,
+							javax.naming,
 							javax.naming.*,
 							com.liferay.portal.model,
 							com.liferay.staging.portlet.data.handler,
@@ -106,8 +83,7 @@
 							org.xml.sax.*,
 							org.osgi.*
 						</Import-Package>
-						<Servlet-Context-Name>blade-jsf-portlet</Servlet-Context-Name>
-						<Web-ContextPath>/blade-jsf-portlet</Web-ContextPath>
+						<Web-ContextPath>/blade-listener-servlet-portlet</Web-ContextPath>
 						<_dsannotations>*</_dsannotations>
 					</instructions>
 				</configuration>

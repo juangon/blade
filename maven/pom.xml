@@ -12,7 +12,7 @@
 
 	<properties>
 		<liferay.version>7.0.0-SNAPSHOT</liferay.version>
-		<mojarra.version>2.2.6</mojarra.version>
+		<mojarra.version>2.2.12</mojarra.version>
 	</properties>
 
 	<repositories>
@@ -52,7 +52,7 @@
 			<dependency>
 				<groupId>com.liferay.faces</groupId>
 				<artifactId>liferay-faces-bridge-impl</artifactId>
-				<version>4.2.0-beta</version>
+				<version>4.2.5-ga6</version>
 			</dependency>
 			<dependency>
 				<groupId>com.liferay.portal</groupId>
