@@ -106,6 +106,7 @@
 							org.xml.sax.*,
 							org.osgi.*
 						</Import-Package>
+						<Servlet-Context-Name>blade-jsf-portlet</Servlet-Context-Name>
 						<Web-ContextPath>/blade-jsf-portlet</Web-ContextPath>
 						<_dsannotations>*</_dsannotations>
 					</instructions>
