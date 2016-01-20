@@ -36,6 +36,12 @@
 			<version>7.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
+			<groupId>com.liferay</groupId>
+  			<artifactId>com.liferay.portal.portlet.tracker</artifactId>
+  			<version>1.0.0-SNAPSHOT</version>
+  			<scope>provided</scope>
+  		</dependency>
+		<dependency>
 			<groupId>javax.portlet</groupId>
 			<artifactId>portlet-api</artifactId>
 			<scope>provided</scope>
@@ -46,6 +52,12 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>el-api</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.osgi</groupId>
 			<artifactId>org.osgi.compendium</artifactId>
 			<scope>provided</scope>
@@ -53,12 +65,6 @@
 		<dependency>
 			<groupId>org.osgi</groupId>
 			<artifactId>org.osgi.core</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.liferay</groupId>
-			<artifactId>com.liferay.portal.jsf.portlet.tracker</artifactId>
-			<version>1.0.0</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -91,14 +97,17 @@
 							javax.xml,
 							javax.xml.*,
 							javax.naming.*,
+							javax.crypto,
+							javax.crypto.*,
 							com.liferay.portal.model,
 							com.liferay.staging.portlet.data.handler,
-							com.liferay.portlet.exportimport.lar,
-							com.liferay.portal.jsf.portlet.tracker,
+							com.liferay.portlet.exportimport.lar,							
 							com.liferay.portal.kernel.log,
 							com.liferay.portal.kernel.servlet.filters.invoker,
 							com.liferay.portal.kernel.servlet,
 							com.liferay.portal.kernel.portlet,
+							com.liferay.portal.kernel.exception,
+							com.liferay.portal.portlet.tracker,
 							com.sun.el,
 							org.w3c.dom,
 							org.w3c.dom.*,

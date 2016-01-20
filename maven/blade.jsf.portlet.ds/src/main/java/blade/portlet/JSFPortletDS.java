@@ -20,7 +20,11 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
+import com.liferay.portal.portlet.tracker.ServletContextAware;
+
 import javax.portlet.Portlet;
+import javax.portlet.PortletConfig;
+import javax.portlet.PortletException;
 import javax.portlet.faces.GenericFacesPortlet;
 import javax.servlet.ServletContext;
 
@@ -30,21 +34,40 @@ import javax.servlet.ServletContext;
 		"com.liferay.portlet.display-category=category.sample",
 		"com.liferay.portlet.instanceable=true",
 		"javax.portlet.display-name=JSF Portlet DS",
-		"javax.portlet.init-param.view-template=",
+		"javax.portlet.init-param.javax.portlet.faces.defaultViewId.view=/META-INF/resources/portletViewMode.xhtml",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
 	service = Portlet.class
 )
-public class JSFPortletDS extends GenericFacesPortlet {
+public class JSFPortletDS extends GenericFacesPortlet implements ServletContextAware {
+
+	private ServletContext _servletContext;
 
 	@Activate
 	public void activate(BundleContext bundleContext) {
 		System.err.println("!@#$ activated " + this);
 	}
 
-	@Reference(target="(osgi.web.symbolicname=blade.jsf.portlet.ds)")
-	protected void setServletContext(ServletContext servletContext) {
-		//wait for the servlet context
+	public void destroy() {
+		System.err.println("Destroyed ");
+		super.destroy();
 	}
 
+	@Reference(target="(osgi.web.symbolicname=blade.jsf.portlet.ds)")
+	protected void setServletContext (ServletContext servletContext) {
+		_servletContext = servletContext;
+	}
+
+	@Override
+	public void init(PortletConfig portletConfig) throws PortletException {
+		
+		super.init(portletConfig);
+		System.err.println("Init");		
+	}
+
+	@Override
+	public ServletContext getServletContext() {
+		return _servletContext;
+	}
+	
 }
